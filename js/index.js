@@ -49,12 +49,10 @@ middleImg.src = siteContent['main-content']['middle-img-src'];
 
 // NAVBAR SELECTORS
 let navLinks = document.querySelectorAll('nav a');
-navLinks[0].textContent = siteContent.nav["nav-item-1"];
-navLinks[1].textContent = siteContent.nav["nav-item-2"];
-navLinks[2].textContent = siteContent.nav["nav-item-3"];
-navLinks[3].textContent = siteContent.nav["nav-item-4"];
-navLinks[4].textContent = siteContent.nav["nav-item-5"];
-navLinks[5].textContent = siteContent.nav["nav-item-6"];
+
+navLinks.forEach((item, index) => {
+  item.textContent = siteContent['nav'][`nav-item-${index + 1}`] 
+});
 
 navLinks.forEach(item => item.style.color = 'green');
 
